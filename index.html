@@ -1,0 +1,794 @@
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+
+
+function isTouchDevice() {
+  return (('ontouchstart' in window) ||
+     (navigator.maxTouchPoints > 0) ||
+     (navigator.msMaxTouchPoints > 0));
+}
+
+
+function ScrollRemove() {
+
+/*alert(isTouchDevice());*/
+document.getElementsByClassName("tablinks")[0].click();
+
+if (isTouchDevice()) {
+document.getElementById('ALeft').style.visibility = 'hidden';
+document.getElementById('ARight').style.visibility = 'hidden';
+} else {
+
+var style = document.createElement('style');
+style.innerHTML = `
+
+.arrow-right {
+  float:right;
+  width: 0;
+  height: 0; 
+  border-top: 37px solid transparent;
+  border-bottom: 37px solid transparent;
+  border-left: 70px solid grey; 
+}
+.arrow-left {
+  float:left;
+  border-top: 37px solid transparent;
+  border-bottom: 37px solid transparent; 
+  border-right:70px solid grey; 
+}
+  `;
+document.head.appendChild(style);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+var newwindow
+function popitup(url , title) {
+if (newwindow && !newwindow.closed)
+{ newwindow.focus(); newwindow.document.clear() }
+else
+{ newwindow=window.open('','','width=404,height=316,resizable=1') }
+newwindow.document.writeln('<> <head> <title>' + title + '<\/title> <\/head> <body bgcolor=\"black\"> <center>');
+newwindow.document.writeln('<img src=' + url + ' title=\"' + title + '\" alt=\"' + title + '\" >');
+newwindow.document.writeln('<\/center> <\/body> <\/html>');
+newwindow.document.close();
+}
+
+
+
+
+
+
+
+
+
+
+function tidy()
+{
+if (newwindow && !newwindow.closed) { newwindow.close(); }
+}
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+  return false;  }
+
+function moveNavigation(byX) {
+  var navigation = document.getElementsByClassName("tab")[0];
+  navigation.scrollLeft = navigation.scrollLeft + byX;
+  }
+
+function popup(mylink, windowname) { if (! window.focus)return true; var href;
+if (typeof(mylink) == 'string') href=mylink; else href=mylink.href;
+window.open(href, windowname, 'width=400,height=800,scrollbars=yes'); return false; }
+
+window.onload = ScrollRemove;
+
+</script>
+
+
+
+
+<Style>
+    .tab-navigation {
+  border: 1px solid solid gray;
+}
+/* Style the tab */
+.tab {
+    overflow-x: hidden;
+    background-color: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    overflow: hidden;
+    border:solid 0px solid gray;
+    text-align:center;}
+/* Style the buttons that are used to open the tab content */
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+  background-color: #ddd;
+}
+/* Create an active/current tablink class */
+
+.tab button.active {
+  background-color: #ccc;
+}
+/* Style the tab content */
+
+.tabcontent {
+  display: none;
+  padding: 2px 2px;
+  border: 1px solid solid gray;
+  border-top: none;
+}
+
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.arrow-left {
+float: left;
+}
+
+.arrow-right {
+float: right;
+}
+
+.tab-control {
+background-color: #ddd;
+}
+
+.tab button,
+.tab-control {
+background-color: #f1f1f1;
+/* float: left; */
+display: inline-block;
+border:solid 1px solid gray;
+outline: none;
+cursor: pointer;
+padding: 24px 12px;
+transition: 0.3s;
+font-size: 48px;
+}
+
+.tablinks {border-radius: 1px;}
+/* Radius of Curavture at edge*/
+</Style>
+
+
+<title>Onomatopoeia Menu</title>
+<body  style="background-color:rgb(255,255,255);"><table border=0 style='border-width:0; width:100%' cellspacing='0' cellpadding='0'>
+<colgroup><col span='1' style='width: 17%;'><col span='1' style='width: 60%;'><col span='1' style='width: 17%;'></colgroup>
+<tr>
+<th style='border-style: none; border-width: medium'></th>
+<th style='border-style: none; border-width: medium'><p align='center'>
+<font face='Helvetica'><img src='logo1.png' alt='Missing Logo' class='center'></font></p></th>
+<th style='border-style: none; border-width: medium'></th>
+</tr>
+<tr>
+<th style='border-style: none; border-width: medium'></th>
+<th style='border-style: none; border-width: medium'>
+<font face='Helvetica' style='font-size: 48pt'>Onomatopoeia Menu</font></th>
+<th style='border-style: none; border-width: medium'></th>
+</tr>
+<tr>
+<td style='border-style: none; border-width: medium'></td>
+<td align='center' style='border-style: none; border-width: medium'>
+<font face='Helvetica' size='6'>Tel.01-398986</font></td>
+<td align='right' style='border-style: none; border-width: medium'>
+<font face='Helvetica' size='4'>2021-07-17 00:11:32</font></td>
+</tr>
+</table>
+
+<div class="tab">
+<button class="tablinks" onclick="return openCity(event, 'Food')">Food</button>
+<button class="tablinks" onclick="return openCity(event, 'Hot Drinks')">Hot Drinks</button>
+<button class="tablinks" onclick="return openCity(event, 'Tea')">Tea</button>
+<button class="tablinks" onclick="return openCity(event, 'Cold Drinks')">Cold Drinks</button>
+<button class="tablinks" onclick="return openCity(event, 'Desserts')">Desserts</button>
+<button class="tablinks" onclick="return openCity(event, 'Beer')">Beer</button>
+<button class="tablinks" onclick="return openCity(event, 'Spirits')">Spirits</button>
+<button class="tablinks" onclick="return openCity(event, 'Cocktails')">Cocktails</button>
+<button class="tablinks" onclick="return openCity(event, 'Shots')">Shots</button>
+</div>
+
+<div id="Food" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Ono's Kaakeh<br><font face="Helvetica" style="font-size:32px">Our special Kaakeh with Akkawi cheese, Kashkaval cheese, Zaatar, Tomatoes, Cucumbers, Mint, Olive Oil</br></p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>30,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Kaakeh Cheese<br><font face="Helvetica" style="font-size:32px">Our special Kaakeh with Akkawi cheese, Kashkaval cheese, and Sumac</br></p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Kaakeh Labneh<br><font face="Helvetica" style="font-size:32px">Our special Kaakeh with Labneh, Zaatar, Tomatoes, Mint, and Olive Oil.</br></p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>23,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Kaakeh Zaatar<br><font face="Helvetica" style="font-size:32px">Our special Kaakeh with Zaatar, Tomatoes, and Mint.</br></p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>18,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Labneh Platter<br><font face="Helvetica" style="font-size:32px">Labneh Platter served with Zaatar, Tomatoes, Olives, Cucumbers, and Kaakeh bread on the side.</br></p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Lahm Bi Ajeen<br><font face="Helvetica" style="font-size:32px">Homemade Lahm B'ajeen ( Meat mixed with herbs and pomegranate molasses, cooked on puff pastry) </br></p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>30,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Wara'a Enab<br><font face="Helvetica" style="font-size:32px">Homemade grape leaves rolls with Meat, cooked for 24hrs.</br></p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>35,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Dip and Chips<br><font face="Helvetica" style="font-size:32px">Chips with Ono's special dip on the side</br></p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Hot Drinks" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Espresso</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>8,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Macchiato</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>8,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Doppio</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>12,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Americano</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>12,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Cappuccino</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>16,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Cafe Latte</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>16,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Cafe Mocha</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Caramel Macchiato</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>French Press</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Turkish Coffee</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>8,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Raqwa</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>12,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Hot Chocolate</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Minted Hot Chocolate</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>18,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Espresso shot</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>6,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Vanilla Flavor</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>4,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Mint Flavor</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>4,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Cardamom Flavor</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>4,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Hazelnut Flavor</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>4,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Caramel Flavor</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>4,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Whiskey</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Milk</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>3,000 LL</p></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Tea" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Ginger Tea</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Morning Tea</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Darjeeling Tea</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Monkey King Jasmine -Fujian</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Blue Flowers</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Tzarevitch</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Secret from Tibet</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Morocco Garden</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Tokyo Journey</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Orange Flower Wu-long</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>White Pavillon</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Body and Soul</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Afghan Sweet</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Ginger</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>5,000 LL</p></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Cold Drinks" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Twix Chocolate Smoothie</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Strawberry Smoothie</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Mango Smoothie</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Chocolate Strawberry Smoothie</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Strawberry Banana Mango Smoothie</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Chocolate Banana Smoothie</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Banana and Honey Smoothie</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Minted Ice Chocolate</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>18,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Iced Chocolate</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Orange</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Lemonade</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>12,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Minted Lemonade</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Lavender Lemonade</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Wared Juice</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Blueberry Juice</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>12,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Ice Tea</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Sparkling Water</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Pepsi</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>7up</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Pepsi Diet</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>7up Diet</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Ayran</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Water</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>3,000 LL</p></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Desserts" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Chocolate Cake</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Apple Cake</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Banana Cake</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Beer" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Almaza</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>17,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Beirut Beer</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>17,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Heineken</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>22,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Mexican Beer</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>5,000 LL</p></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Spirits" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Regular Whiskey</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>35,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Prem Whiskey</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>60,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Local Whiskey</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>15,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Tellamore dew</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>45,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Jamesson</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>45,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Jack Daniels Or Monkey Shoulder</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>50,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Old Bridge Or Glenbey</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Red Wine Glass</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>White Wine Glass</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Rose Wine Glass</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Red Wine Bottle</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>100,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>White Wine Bottle</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>100,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Rose Wine Bottle</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>100,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Arak</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Cocktails" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Mojito</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>35,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Moscow Mule</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>35,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>London Mule</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>35,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Marguerita</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>35,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Gin Basil</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Regular Cocktail</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>30,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Premium Cocktail</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>40,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Gin Sour</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Gin</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Tequila</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>45,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Tonic</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>10,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Add Sparkling Water</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>5,000 LL</p></td>
+</tr>
+
+</table>
+</div>
+
+<div id="Shots" class="tabcontent">
+<table>
+<head><style>table, th, td {border: 1px solid gray; border-collapse:collapse;}</style></head><body><body  style="background-color:rgb(255,255,255);"><table style="width:100%"><tr>
+<tr>
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Regular Shot</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Premium Shot</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>25,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>DooDoo</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Whiskey Shot</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
+
+<td "col width=70%"><p style='font-family:helvetica;font-size:45px;'>Tequila Shot</p></td>
+<td "col width=30%" style="text-align:right"><p style='font-family:helvetica;font-size:45px;'>20,000 LL</p></td>
+</tr>
+
